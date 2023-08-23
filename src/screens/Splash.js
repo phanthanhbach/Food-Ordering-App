@@ -5,7 +5,7 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 const Splash = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('DangNhap');
+            navigation.navigate('SignIn');
         }, 3000)
     },[])
     return (
