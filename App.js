@@ -4,15 +4,14 @@ import { StatusBar } from "expo-status-bar";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-//import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { auth, setDoc, db, doc } from "./firebase";
 
 import Splash from "./src/screens/Splash";
 import BottomTab from "./src/components/BottomTab";
-import DangNhap from "./src/screens/DangNhap";
-import DangKy from "./src/screens/DangKy";
-import QuenMatKhau from "./src/screens/QuenMatKhau";
+import SignIn from "./src/screens/SignIn";
+import SignUp from "./src/screens/SignUp";
+import ForgotPassword from "./src/screens/ForgotPassword";
 // import Menu from './src/screen/Menu';
 // import OrderConfirm from './src/screen/Checkout/OrderConfirm';
 // import OrderHistory from './src/screen/OrderHistory';
@@ -50,9 +49,9 @@ const App = () => {
             ) : (
               <Stack.Group>
                 <Stack.Screen name="Splash" component={Splash} />
-                <Stack.Screen name="DangNhap" component={DangNhap} />
-                <Stack.Screen name="DangKy" component={DangKy} />
-                <Stack.Screen name="QuenMatKhau" component={QuenMatKhau} />
+                <Stack.Screen name="SignIn" component={SignIn} />
+                <Stack.Screen name="SignUp" component={SignUp} />
+                <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
               </Stack.Group>
             )}
           </Stack.Navigator>

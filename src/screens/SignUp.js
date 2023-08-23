@@ -22,7 +22,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, setDoc, db, doc } from "../../firebase";
 
-const DangKy = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -143,7 +143,7 @@ const DangKy = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('DangNhap')}>
+            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
               <Text style={styles.login}>Đã có tài khoản? Đăng nhập</Text>
             </TouchableOpacity>
           </View>
@@ -248,4 +248,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DangKy;
+export default SignUp;

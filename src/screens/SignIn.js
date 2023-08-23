@@ -8,7 +8,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, setDoc, db, doc, } from "../../firebase";
 import { useNavigation } from '@react-navigation/native';
 
-const DangNhap = () => {
+const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(true);
@@ -90,12 +90,12 @@ const DangNhap = () => {
                         <TouchableOpacity onPress={handleLogIn}>
                             <Text style={styles.login}>Đăng Nhập</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('QuenMatKhau')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
                             <Text style={styles.forgetPassword}>Quên Mật Khẩu?</Text>
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('DangKy')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                             <Text style={styles.signUp}>Chưa có tài khoản? Đăng ký</Text>
                         </TouchableOpacity>
                     </View>
@@ -203,4 +203,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DangNhap;
+export default SignIn;
