@@ -3,11 +3,7 @@ import React from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import {
-  getFocusedRouteNameFromRoute,
-  NavigationContainer,
-  useRoute,
-} from "@react-navigation/native";
+import { getFocusedRouteNameFromRoute, NavigationContainer, useRoute, } from "@react-navigation/native";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -16,12 +12,7 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 //import * as SplashScreen from "expo-splash-screen";
 
-import {
-  HomeStack,
-  MenuStack,
-  ProfileStack,
-  VoucherStack,
-} from "../../navigation";
+import { HomeStack, MenuStack, ProfileStack, VoucherStack, } from "../../navigation";
 
 //SplashScreen.preventAutoHideAsync();
 const Tab = createMaterialBottomTabNavigator();
@@ -123,8 +114,6 @@ const getTabBarVisibility = (route) => {
 
 export default BottomTab;
 
-// import AppLoading from 'expo-app-loading';
-
 // const BottomTab = () => {
 //
 
@@ -133,7 +122,7 @@ export default BottomTab;
 //     //console.log(user_session);
 
 //     return (
-//         
+//
 //     );
 // }
 
