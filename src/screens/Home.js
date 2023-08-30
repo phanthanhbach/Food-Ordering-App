@@ -11,6 +11,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { auth, app, db, collection, addDoc, getDocs, updateDoc, doc, } from '../../firebase'
 
 import Header from '../components/Header';
+import Slider from '../components/HomeScreen/Slider'
+import AboutUs from '../components/HomeScreen/AboutUs';
+import founders from '../components/HomeScreen/Founder';
 
 const Home = ({ navigation }) => {
 
@@ -92,14 +95,37 @@ const Home = ({ navigation }) => {
     );
   };
 
+  const ListFounders = () => {
+    return (<View style={styles.list}>
+      {founders.map((founder, index) => (
+        <TouchableOpacity key={index} activeOpacity={0.8} onPress={() => setSelectedFounderIndex(index)}>
+          <View style={[
+            styles.optionFounder,
+            { backgroundColor: index % 2 === 0 ? '#ffdfcf' : '#feecd1' }, { borderWidth: index == 0 ? 3 : 0 }, { borderColor: index == 0 ? '#EA5C2B' : 'transparent' }
+          ]}>
+            <View style={{ padding: 5, }}>
+              <Image style={{ width: '100%', height: 55, resizeMode: 'contain', }}
+                source={founder.image}
+              />
+            </View>
+          </View>
+          <Text style={styles.optionName}>{founder.name}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>)
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: 'white', }}>
       <StatusBar style='dark' />
       <Header />
       <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, }}>
         <View style={{ paddingTop: 10 }}>
-          {/* <Slider /> */}
+          <Slider />
         </View>
+        <Text style={styles.mainTitle} >
+          Danh Mục
+        </Text>
         <FlatList
           showsVerticalScrollIndicator={false}
           numColumns={4}
@@ -131,7 +157,7 @@ const Home = ({ navigation }) => {
             </View>
           </View>
         </View>
-        {/* <AboutUs /> */}
+        <AboutUs />
         <View style={{ marginVertical: 16, }}>
           <View style={{ paddingVertical: 16, flexDirection: 'row', justifyContent: 'flex-end' }}>
             <Text style={{
@@ -140,7 +166,7 @@ const Home = ({ navigation }) => {
               textShadowRadius: 3,
             }}>FOUNDERS</Text>
           </View>
-          {/* <ListFounders /> */}
+          <ListFounders />
           <View style={{ alignItems: 'center', justifyContent: 'center' }}>
             <TouchableOpacity style={styles.contactButton}>
               <Text style={{ fontSize: 11, fontWeight: '700', color: 'white' }}>CONTACT US</Text>
@@ -171,15 +197,12 @@ export default Home;
 const deviceWidth = Math.round(Dimensions.get("window").width);
 
 const styles = StyleSheet.create({
-
   list: {
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
-
   },
-
   optionList: {
     height: 70,
     width: 80,
@@ -188,16 +211,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     marginRight: (deviceWidth - 80 * 4 - 40) / 3,
   },
-
-
   optionText: {
     textAlign: 'center',
     fontSize: 11,
     color: '#DD3636',
     fontWeight: '700',
   },
-
-
   foodList: {
     width: 170,
     height: 130,
@@ -209,7 +228,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-
   nameIcon: {
     backgroundColor: '#EA5C2B',
     paddingHorizontal: 5,
@@ -217,20 +235,17 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-
   foodName: {
     color: 'white',
     fontWeight: '700',
     fontSize: 10,
   },
-
   iconName: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-
   iconCart: {
     color: '#f28d56',
     borderRadius: 8,
@@ -240,7 +255,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   mainTitle: {
     fontWeight: '700',
     width: '80%',
@@ -248,14 +262,12 @@ const styles = StyleSheet.create({
     color: '#EA5C2B',
     paddingVertical: 16,
   },
-
   moreView: {
     width: '20%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-
   textMore: {
     color: '#EA5C2B',
     fontWeight: '700',
@@ -270,7 +282,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   Button: {
     borderRadius: 12,
     borderWidth: 2,
@@ -283,7 +294,6 @@ const styles = StyleSheet.create({
     height: 30,
     marginTop: 20,
   },
-
   optionFounder: {
     height: 75,
     width: 75,
@@ -292,7 +302,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
 
   },
-
   optionName: {
     color: '#4d4d4d',
     fontSize: 11,
@@ -302,7 +311,6 @@ const styles = StyleSheet.create({
     textShadowRadius: 3,
     textAlign: 'center',
   },
-
   contactButton: {
     borderRadius: 12,
     backgroundColor: '#ea5c2b',
@@ -312,12 +320,10 @@ const styles = StyleSheet.create({
     height: 20,
     marginTop: 20,
   },
-
   contentScroll: {
     alignItems: 'center',
     paddingRight: 10,
   },
-
   voucherContainer: {
     height: 128,
     width: 234,
@@ -330,7 +336,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f9c59f',
   },
-
   vouchersImg: {
     height: 103,
     width: 212,
@@ -338,9 +343,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 10,
-
   },
-
   runBtn: {
     height: 30,
     width: 30,
@@ -353,32 +356,9 @@ const styles = StyleSheet.create({
 })
 
 
-// import founders from '../component/Home/Founder';
 // import vouchers from '../component/Home/Vouchers';
-// import Slider from '../component/Home/Slider'
-// import AboutUs from '../component/Home/AboutUs';
 
 // const Home = ({ navigation }) => {
-
-//     const ListFounders = () => {
-//         return (<View style={styles.list}>
-//             {founders.map((founder, index) => (
-//                 <TouchableOpacity key={index} activeOpacity={0.8} onPress={() => setSelectedFounderIndex(index)}>
-//                     <View style={[
-//                         styles.optionFounder,
-//                         { backgroundColor: index % 2 === 0 ? '#ffdfcf' : '#feecd1' }, { borderWidth: index == 0 ? 3 : 0 }, { borderColor: index == 0 ? '#EA5C2B' : 'transparent' }
-//                     ]}>
-//                         <View style={{ padding: 5, }}>
-//                             <Image style={{ width: '100%', height: 55, resizeMode: 'contain', }}
-//                                 source={founder.image}
-//                             />
-//                         </View>
-//                     </View>
-//                     <Text style={styles.optionName}>{founder.name}</Text>
-//                 </TouchableOpacity>
-//             ))}
-//         </View>)
-//     }
 
 //     const ListVouchers = () => {
 //         return (<ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentScroll}>
