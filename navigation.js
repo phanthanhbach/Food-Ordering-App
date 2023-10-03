@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import Home from './src/screens/Home';
 import Menu from './src/screens/Menu';
-// import FoodDetail from './src/screen/FoodDetail';
+import FoodDetail from './src/screens/FoodDetail';
 // import ChooseSuccessfully from "./src/screen/VoucherScreen/ChooseSuccessfully";
 // import VoucherDescription from "./src/screen/VoucherScreen/VoucherDescription";
 // import Sort from "./src/screen/Sort";
@@ -43,18 +43,18 @@ const HomeStack = () => {
         {/* <Stack.Screen name="Sort" component={Sort} /> */}
         {/* <Stack.Screen name="SortReview" component={SortReview} />
                 <Stack.Screen name="SortMoney" component={SortMoney} /> */}
-        {/* <Stack.Screen name="FoodDetail" component={FoodDetail}
-                    options={{
-                        title: 'Chi tiết sản phẩm',
-                        headerStyle: {
-                            height: 60,
-                        },
-                        headerTitleAlign: 'center',
-                        headerTitleStyle: { fontSize: 18, paddingBottom: 10, },
-                        headerLeftContainerStyle: { paddingBottom: 10, },
-                    }}
-                />
-                <Stack.Screen name="ReviewStack" component={ReviewStack}
+        <Stack.Screen name="FoodDetail" component={FoodDetail}
+          options={{
+            title: 'Chi tiết sản phẩm',
+            headerStyle: {
+              height: 60,
+            },
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontSize: 18, paddingBottom: 10, },
+            headerLeftContainerStyle: { paddingBottom: 10, },
+          }}
+        />
+        {/* <Stack.Screen name="ReviewStack" component={ReviewStack}
                     options={{
                         title: 'Đánh giá',
                         headerStyle: {
@@ -117,7 +117,7 @@ const MenuStack = () => {
             title: "Thực đơn",
           }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="FoodDetail"
           component={FoodDetail}
           options={{
@@ -129,7 +129,7 @@ const MenuStack = () => {
             headerTitleStyle: { fontSize: 18 },
           }}
         />
-        <Stack.Screen name="Lọc" component={Sort} />
+        {/* <Stack.Screen name="Lọc" component={Sort} />
         <Stack.Screen name="Giá tiền" component={SortMoney} />
         <Stack.Screen name="Theo dõi đơn hàng" component={OrderTracking} />
         <Stack.Screen
