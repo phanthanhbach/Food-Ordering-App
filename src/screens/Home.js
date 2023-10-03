@@ -14,6 +14,7 @@ import Header from '../components/Header';
 import Slider from '../components/HomeScreen/Slider'
 import AboutUs from '../components/HomeScreen/AboutUs';
 import founders from '../components/HomeScreen/Founder';
+import offers from '../components/HomeScreen/Offers';
 
 const Home = ({ navigation }) => {
 
@@ -115,6 +116,30 @@ const Home = ({ navigation }) => {
     </View>)
   }
 
+  const ListOffers = () => {
+    return (<ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentScroll}>
+      {offers.map((offer, index) => (
+        <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }} key={index} onPress={() => setSelectedVoucherIndex(index)}>
+          <View style={{ ...styles.offersContainer }}>
+            <View style={styles.offersImg}>
+              <Image style={{
+                height: 100, width: 200, resizeMode: 'cover', borderBottomRightRadius: 12,
+                borderTopLeftRadius: 12,
+              }}
+                source={offer.image}
+              />
+            </View>
+
+          </View>
+          <View style={[styles.runBtn, { display: index == offer.length - 1 ? 'none' : 'flex' }]}>
+            <Icon name="menu-right" size={30} color="white" />
+          </View>
+        </TouchableOpacity>
+
+      ))}
+    </ScrollView>)
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: 'white', }}>
       <StatusBar style='dark' />
@@ -124,7 +149,7 @@ const Home = ({ navigation }) => {
           <Slider />
         </View>
         <Text style={styles.mainTitle} >
-          Danh Mục
+          Categories
         </Text>
         <FlatList
           showsVerticalScrollIndicator={false}
@@ -174,7 +199,7 @@ const Home = ({ navigation }) => {
           </View>
         </View>
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', }}>
-          <Text style={styles.mainTitle}>Voucher</Text>
+          <Text style={styles.mainTitle}>Special Offers</Text>
           <View style={styles.moreView}>
             <Text style={styles.textMore} >More</Text>
             <View style={styles.iconMore}>
@@ -182,9 +207,9 @@ const Home = ({ navigation }) => {
             </View>
           </View>
         </View>
-        {/* <View style={{ paddingBottom: 10 }}>
-          <ListVouchers />
-        </View> */}
+        <View style={{ paddingBottom: 10 }}>
+          <ListOffers />
+        </View>
       </ScrollView>
       <Divider width={1} />
     </View>
@@ -324,7 +349,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 10,
   },
-  voucherContainer: {
+  offersContainer: {
     height: 128,
     width: 234,
     marginRight: 10,
@@ -336,7 +361,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f9c59f',
   },
-  vouchersImg: {
+  offersImg: {
     height: 103,
     width: 212,
     borderRadius: 30,
@@ -354,40 +379,3 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 })
-
-
-// import vouchers from '../component/Home/Vouchers';
-
-// const Home = ({ navigation }) => {
-
-//     const ListVouchers = () => {
-//         return (<ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentScroll}>
-//             {vouchers.map((voucher, index) => (
-//                 <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }} key={index} onPress={() => setSelectedVoucherIndex(index)}>
-//                     <View style={{ ...styles.voucherContainer }}>
-//                         <View style={styles.vouchersImg}>
-//                             <Image style={{
-//                                 height: 100, width: 200, resizeMode: 'cover', borderBottomRightRadius: 12,
-//                                 borderTopLeftRadius: 12,
-//                             }}
-//                                 source={voucher.image}
-//                             />
-//                         </View>
-
-//                     </View>
-//                     <View style={[styles.runBtn, { display: index == vouchers.length - 1 ? 'none' : 'flex' }]}>
-//                         <Icon name="menu-right" size={30} color="white" />
-//                     </View>
-//                 </TouchableOpacity>
-
-//             ))}
-//         </ScrollView>)
-//     }
-
-
-//     return (
-//
-//     )
-// }
-
-// export default Home;
