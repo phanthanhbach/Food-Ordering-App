@@ -16,15 +16,6 @@ const FoodDetail = ({ navigation, route }) => {
 
   return (
     <View style={{ backgroundColor: 'white', flex: 1 }}>
-
-      {/* <View style={styles.header}>
-        <TouchableOpacity onPress={navigation.goBack}>
-          <Icon style={{ color: 'black', textAlign: 'center' }} name="chevron-left" size={30}></Icon>
-        </TouchableOpacity>
-        <View style={styles.title}>
-          <Text style={{ fontWeight: 700, fontSize: 18, color: 'black', }}>Chi tiết sản phẩm</Text>
-        </View>
-      </View> */}
       <ScrollView showsVerticalScrollIndicator={true}>
         <View style={styles.backgroundDetails}>
           <Image source={{ uri: item.image }} style={{ height: 220, width: 220 }} />
