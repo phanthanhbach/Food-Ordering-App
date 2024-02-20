@@ -61,8 +61,8 @@ const Profile = () => {
         <View style={{ flex: 4, justifyContent: "space-between" }}>
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold", marginTop: 20, }}>{userName}</Text>
           <View style={{ flexDirection: 'row' }}>
-            <MaterialIcons name="edit" size={15} color="white" ></MaterialIcons>
-            <TouchableOpacity onPress={() => navigation.navigate('ThongTin')}>
+            <MaterialIcons name="edit" size={15} color="white" > </MaterialIcons>
+            <TouchableOpacity onPress={() => navigation.navigate('Information')}>
               <Text style={{ color: "#fff" }}>Chỉnh sửa thông tin cá nhân</Text>
             </TouchableOpacity>
           </View>
@@ -71,12 +71,12 @@ const Profile = () => {
       <View style={{ marginTop: 21, height: 700 }}>
 
         <View style={style.content}>
-          <TouchableOpacity style={{ flexDirection: 'row', flex: 1 }} onPress={() => navigation.navigate('DoiMatKhau')} >
+          <TouchableOpacity style={{ flexDirection: 'row', flex: 1 }} onPress={() => navigation.navigate('ChangePW')} >
             <Entypo name="lock" size={15} color="#EA5C2B" style={style.icon1} />
             <Text style={style.text}>Đổi mật khẩu</Text>
             <AntDesign name="right" size={12} color="black" style={style.icon2} />
           </TouchableOpacity>
-          <View style={{ width: '100%', height: 0, borderWidth: 0.5, borderColor: "#B9B9B9" }}></View>
+          <View style={{ width: '100%', borderWidth: 0.75, borderColor: "#B9B9B9" }}></View>
         </View>
         <View style={style.content}>
           <TouchableOpacity style={{ flexDirection: 'row', flex: 1 }} onPress={() => navigation.navigate('OrderTracking')}>
@@ -87,7 +87,7 @@ const Profile = () => {
             <Text style={style.text}>Đơn hàng</Text>
             <AntDesign name="right" size={12} color="black" style={style.icon2} />
           </TouchableOpacity>
-          <View style={{ width: '100%', height: 0, borderWidth: 0.5, borderColor: "#B9B9B9" }}></View>
+          <View style={{ width: '100%', borderWidth: 0.75, borderColor: "#B9B9B9" }}></View>
         </View>
 
         <View style={style.content}>
@@ -96,7 +96,7 @@ const Profile = () => {
             <Text style={style.text}>Thông báo</Text>
             <AntDesign name="right" size={12} color="black" style={style.icon2} />
           </TouchableOpacity>
-          <View style={{ width: '100%', height: 0, borderWidth: 0.5, borderColor: "#B9B9B9" }}></View>
+          <View style={{ width: '100%', borderWidth: 0.75, borderColor: "#B9B9B9" }}></View>
         </View>
         <View style={style.content}>
           <TouchableOpacity style={{ flexDirection: 'row', flex: 1 }} onPress={handleSignOut} >
@@ -104,7 +104,7 @@ const Profile = () => {
             <Text style={style.text}>Đăng xuất</Text>
             <AntDesign name="right" size={12} color="black" style={style.icon2} />
           </TouchableOpacity>
-          <View style={{ width: '100%', height: 0, borderWidth: 0.5, borderColor: "#B9B9B9" }}></View>
+          <View style={{ width: '100%', borderWidth: 0.75, borderColor: "#B9B9B9" }}></View>
         </View>
       </View>
     </SafeAreaView>
@@ -132,7 +132,7 @@ const style = StyleSheet.create({
     height: 700,
   },
   content: {
-    height: 35,
+    height: 40,
     paddingTop: 10,
   },
   icon1: {
