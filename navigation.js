@@ -11,12 +11,12 @@ import FoodDetail from './src/screens/FoodDetail';
 // import Account from './src/screen/Account';
 
 // import ReviewDescription from './src/screen/Rating/ReviewDescription';
-// import ThongTin from './src/screen/ThongTin';
-// import DoiMatKhau from './src/screen/DoiMatKhau';
 // import XacThuc from './src/screen/XacThuc'
 import Voucher from "./src/screens/Voucher";
 
 import Profile from "./src/screens/Profile";
+import Information from "./src/screens/Information";
+import ChangePW from './src/screens/ChangePW';
 // import SortReview from "./src/component/Sort/SortReview";
 // import SortMoney from "./src/component/Sort/SortMoney";
 // import DetailReview from "./src/component/FoodDetail/DetailReview";
@@ -280,10 +280,9 @@ const ProfileStack = () => {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Profile" component={Profile} />
-        {/* <Stack.Screen name="Account" component={ThongTin} />
-        <Stack.Screen name="ThongTin" component={ThongTin} />
-        <Stack.Screen name="DoiMatKhau" component={DoiMatKhau} />
-        <Stack.Screen name="XacThuc" component={XacThuc} />
+        <Stack.Screen name="Information" component={Information} />
+        <Stack.Screen name="ChangePW" component={ChangePW} />
+        {/* <Stack.Screen name="XacThuc" component={XacThuc} />
         <Stack.Screen
           name="OrderTracking"
           component={OrderTracking}
