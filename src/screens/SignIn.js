@@ -16,14 +16,15 @@ const SignIn = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
+        const subscribe = auth.onAuthStateChanged(user => {
             if (user) {
                 navigation.replace('BottomTab');
             }
         })
 
-        return unsubscribe;
+        return subscribe;
     }, [])
+    
     const handleLogIn = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(userCredentials => {
