@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TouchableOpacity, Image, TouchableHighlight, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Image, TouchableHighlight, Dimensions, SafeAreaView } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { Divider } from "react-native-elements";
@@ -141,7 +141,7 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'white', }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white', }}>
       <StatusBar style='dark' />
       <Header />
       <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, }}>
@@ -167,6 +167,7 @@ const Home = ({ navigation }) => {
           </View>
         </View>
         <FlatList
+          horizontal={false}
           showsVerticalScrollIndicator={false}
           numColumns={2}
           data={featuredItems}
@@ -212,7 +213,7 @@ const Home = ({ navigation }) => {
         </View>
       </ScrollView>
       <Divider width={1} />
-    </View>
+    </SafeAreaView>
 
   )
 }
