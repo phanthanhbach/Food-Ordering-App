@@ -23,8 +23,8 @@ import ForgotPassword from "./src/screens/ForgotPassword";
 // import Account from './src/screen/Account';
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const unsubscribe = auth.onAuthStateChanged((user) => {
+  const [loggedIn, setLoggedIn] = useState(subscribe);
+  var subscribe = auth.onAuthStateChanged((user) => {
     if (user) {
       setLoggedIn(true);
     } else {
@@ -37,8 +37,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer independent={true}>
-        <SafeAreaView style={{ flex: 1 }}
-        >
+        <SafeAreaView style={{ flex: 1 }}>
           {/* <StatusBar style='light' /> */}
           <Stack.Navigator
             initialRouteName="Splash"
